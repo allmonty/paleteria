@@ -57,19 +57,17 @@ fn main() {
         });
 
 
-        let pointing_vector = subtract_vector(chosen_color, gray_color);
+        let pointing_vector = subtract_vector(gray_color, chosen_color);
 
         let distance: u8 = std::cmp::min(length(array_to_u32_array(pointing_vector)), 255) as u8;
 
-        let factor: f32 = 441.0/distance as f32;
+        let factor: f32 = distance as f32/441.0;
 
-        println!("{}", factor);
+        // let addition_color = mult_vector(pointing_vector, factor);
 
-        let addition_color = mult_vector(pointing_vector, factor);
-
-        new_img.put_pixel(x, y, add_vector(gray_color, addition_color));
+        new_img.put_pixel(x, y, mult_vector(chosen_color, factor));
     }
 
     // Write the contents of this image to the Writer in PNG format.
-    new_img.save("outputs/test35.jpg").unwrap();
+    new_img.save("outputs/test36.jpg").unwrap();
 }
