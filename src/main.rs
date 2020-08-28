@@ -79,15 +79,15 @@ fn main() {
     let mut new_img = image::ImageBuffer::new(img_color.dimensions().0, img_color.dimensions().1);
     
     let pallete_colors: Vec<Vector<u8>> = vec![
-        // Vector::<u8>{x: 56, y: 74, z: 8},
-        // Vector::<u8>{x: 100, y: 168, z: 151},
-        // Vector::<u8>{x: 228, y: 193, z: 85},
-        // Vector::<u8>{x: 208, y: 123, z: 78},
-        // Vector::<u8>{x: 203, y: 86, z: 83},
+        Vector::<u8>{x: 56, y: 74, z: 8},
+        Vector::<u8>{x: 100, y: 168, z: 151},
+        Vector::<u8>{x: 228, y: 193, z: 85},
+        Vector::<u8>{x: 208, y: 123, z: 78},
+        Vector::<u8>{x: 203, y: 86, z: 83},
 
-        Vector::<u8>{x: 202, y: 124, z: 133},
-        Vector::<u8>{x: 25, y: 46, z: 80},
-        Vector::<u8>{x: 126, y: 76, z: 204},
+        // Vector::<u8>{x: 202, y: 124, z: 133},
+        // Vector::<u8>{x: 25, y: 46, z: 80},
+        // Vector::<u8>{x: 126, y: 76, z: 204},
     ];
 
     for (x, y, pixel) in img_color.enumerate_pixels() {
@@ -115,5 +115,5 @@ fn main() {
     }
 
     // Write the contents of this image to the Writer in PNG format.
-    new_img.save("outputs/test43.jpg").unwrap();
+    new_img.save("outputs/test44.jpg").unwrap();
 }
